@@ -1,6 +1,12 @@
 import { calcularCadena } from './calculadora';
 
 
-test('cadena vacía retorna 0', () => {
-    expect(calcularCadena("")).toBe(0);
-});
+describe('Pruebas en calcular cadena', () => {
+    test('cadena con un número retorna ese número', () => {
+        expect(calcularCadena("2")).toBe(2);
+    });
+
+    test('cadena con dos números separados por coma retorna su suma', () => {
+        expect(calcularCadena("1,2")).toBe(3);
+    });
+})

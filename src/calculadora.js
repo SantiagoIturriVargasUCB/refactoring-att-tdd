@@ -1,3 +1,5 @@
 export const calcularCadena = cadena => {
-    return cadena === "" ? 0 : null;
+    if (cadena === "") return 0;
+    const numeros = cadena.split(/,|-/).map(Number);
+    return numeros.reduce((acc, curr) => acc + curr, 0);
 }
