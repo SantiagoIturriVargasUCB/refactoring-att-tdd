@@ -13,4 +13,9 @@ describe('Pruebas en calcular cadena', () => {
     test('cadena con delimitador definido por el usuario retorna la suma', () => {
         expect(calcularCadena("//[;]\n6;3")).toBe(9);
     });
+
+    test('cadena con múltiples delimitadores retorna la suma', () => {
+        expect(calcularCadena("//[*][%]\n1*2%3")).toBe(6);
+    });
+    
 })
