@@ -1,0 +1,43 @@
+Implica la refactorizaciones necesarias para seguir los principios de clean code para nombres y funciones
+
+Realiza la implementación del ejercicio descrito abajo, sigue estos pasos:
+
+1.- Describe la Historia de usuario + criterios de confirmación
+
+2.- Desarrolla la historia de usuario aplicando ATDD con cypress y TDD con jest (El punto principal del ejercicio es desarrollar la lógica de negocio con TDD con jest)
+
+Descripción del problema:
+
+Queremos desarrollar una calculadora de cadena. La calculadora recibe cadenas y devuelve la suma de los números en esa cadena. Para el ejercicio, la calculadora funciona con las siguientes reglas:
+
+-Cuando la calculadora recibe una cadena de números separadas por coma debe retornar la suma de los mismos. Por ejm: “1,2,4,8”  retorna 15
+
+- También se puede usar el caracter guion(-) como separador. Por ejemplo: “1-2,3”  retorna 6
+
+- El usuario puede especificar el delimitador. Por ejemplo el delimitador ‘;’ se especifica así:  “//[;] 6;7;4”  retorna 17. Es decir: “//[delimitador]\n secuencia de números”
+
+Otro ejemplo: “//[;] 6,3-2;1”   retorna 12
+
+- Números mayores a 1000 deberían ser ignorados. Por ejemplo: “2, 1001” debería retornar 2
+
+-Se puede especificar también delimitadores de cualquier longitud (de más de un carácter), usando el formato: “//[delimitador]”. Por ejemplo: “//[***] 1***2***3” debería retornar 6
+
+- Se puede especificar múltiples delimitadores usando el formato “//[delim1][delim2]”. Por ejemplo: “//[*][%] 1*2%3,7-9” que debería retornar 22
+
+Con cada ciclo de TDD en verde -> Por favor COMMIT git
+
+calcularCadena(cadena)
+
+-Historia de usuario
+
+- LA PRUEBA M´AS SIMPLE CON LA QUE PUEDO EMPEZAR:
+
+- Para una cadena “” -> 0
+
+- Para una cadena “2” -> 2
+
+- Para una cadena “1,2” -> 3
+
+- ..
+
+-...
