@@ -1,4 +1,4 @@
-describe('Calculadora de Cadenas', () => {
+leardescribe('Calculadora de Cadenas', () => {
     beforeEach(() => {
         // Cargar la página antes de cada prueba
         cy.visit('index.html');
