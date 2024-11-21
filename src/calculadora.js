@@ -1,20 +1,19 @@
 export const calcularCadena = (cadena) => {
     if (cadena === "") return 0;
 
-    let delimitador = /,|-/; // Delimitadores por defecto
+    let delimitador = /,|-/; 
 
     if (cadena.startsWith("//")) {
-        const delimitadorMatch = cadena.match(/^\/\/(\[.+\])\s?/); // Buscar delimitadores personalizados
+        const delimitadorMatch = cadena.match(/^\/\/(\[.+\])\s?/); 
         if (delimitadorMatch) {
             const delimitadores = delimitadorMatch[1]
-                .match(/\[([^\]]+)\]/g) // Extraer cada delimitador entre []
-                .map(d => d.slice(1, -1)); // Limpiar corchetes []
-            // Combinar delimitadores personalizados con predeterminados
+                .match(/\[([^\]]+)\]/g) 
+                .map(d => d.slice(1, -1));
             delimitador = new RegExp(
                 delimitadores.map(escapeRegex).concat([",", "-"]).join("|")
             );
         }
-        cadena = cadena.replace(/^\/\/(\[.+\])\s?/, ""); // Remover encabezado
+        cadena = cadena.replace(/^\/\/(\[.+\])\s?/, ""); 
     }
 
     const numeros = cadena.split(delimitador).map(Number);
